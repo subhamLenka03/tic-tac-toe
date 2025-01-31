@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; /* Required for absolute positioning of theme toggle button */
+}
+
+/* Light Theme */
+body.light {
+  background-color: #f3b17e; /* Warm light background */
+  color: #333; /* Dark text for light theme */
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #1e1e1e; /* Dark background */
+  color: #f5f5f5; /* Light text for dark theme */
+}
+
+/* Game Container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px; /* Ensure content isn't hidden behind the button */
+}
+
+/* Board Styles */
+.board {
+  display: grid;
+  gap: 5px;
+  margin: 20px 0;
+  border: 5px solid var(--border-color);
+  padding: 5px;
+  background-color: var(--board-bg);
+}
+
+/* Square (Cell) Styles */
+.square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--square-bg);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.square:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  background-color: var(--square-hover-bg);
+}
+
+/* Button Container */
+.board-size-selector,
+button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Restart and Theme Toggle Buttons */
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+button.active {
+  background-color: var(--button-active-bg);
+}
+
+/* Reset Button Styling */
+.reset-button {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--button-bg);
+}
+
+.reset-button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Theme Toggle Button Styling */
+.theme-toggle-button {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--button-bg);
+  position: absolute;
+  top: 20px; /* 20px from the top */
+  right: 20px; /* 20px from the right */
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+/* Dynamic Colors for Themes */
+:root {
+  /* Default light theme variables */
+  --border-color: #fac1a2;
+  --board-bg: #f88527;
+  --square-bg: #ffe4b5;
+  --square-hover-bg: #fbba72;
+  --text-color: #333;
+  --button-bg: #d37204;
+  --button-hover-bg: #ca5310;
+  --button-text-color: #fff;
+  --button-active-bg: #bb4d00;
+}
+
+body.dark {
+  --border-color: #444;
+  --board-bg: #429af7c2;
+  --square-bg: #444;
+  --square-hover-bg: #555;
+  --text-color: #f5f5f5;
+  --button-bg: #555;
+  --button-hover-bg: #777;
+  --button-text-color: #f5f5f5;
+  --button-active-bg: #9d9999;
+}
